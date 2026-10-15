@@ -82,19 +82,23 @@ function playGame () {
         computerChoice = getComputerChoice();
         playRound(userChoice, computerChoice);
     }
+    
+    if (humanScore === computerScore) {
+        console.log("It's a tie      Boring");
+        return;
+    }
 
     let youWon = humanScore > computerScore;
     switch (youWon) {
-        case youWon:
+        case true:
             console.log(`You Win!`);
             break;
-        case !youWon:
+        case false:
             console.log("Loser!!!!!!!!!!!!");
             break;
-        default:
-            console.log("It's a Tie, Boring");
-            break;
     }
+    return;
+    
     
 }
 
